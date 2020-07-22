@@ -57,39 +57,41 @@ export default class Search extends React.Component{
                             </form>
                         </div>
                     </header>
-                    
-                    <div className="row text-center content">
-                        {this.state.results.map(book => (
-                            <div className="col-md-3 col-sm-6"> 
-                            <div className="img-thumbnail">
-                                <div className="image">
-                                    <img src={book.volumeInfo.imageLinks.thumbnail} alt = {book.volumeInfo.title}/>
-                                </div>
-                                <div className="caption">
-                                    <h4>{book.volumeInfo.title}</h4>
-                                </div>
-                                <div className="link">
-                                <Link  
-                                    to={{
-                                    pathname: '/info', 
-                                    about: {
-                                        title: book.volumeInfo.title,
-                                        imgURL: book.volumeInfo.imageLinks.thumbnail,
-                                        description: book.volumeInfo.description
-                                    }
-                                    }}
 
-                                    className="btn btn-primary btn-block"
-                                    >
-                                    Synopsis
-                                </Link>
+                    <div className="row">
+                        {this.state.results.map(book=>(
+                            <div className="col-lg-4 col-md-6 col-sm-12">
+                                <div className="container">
+                                    <div className="image">
+                                        <img src={book.volumeInfo.imageLinks.thumbnail} alt = {book.volumeInfo.title}/>
+                                    </div>
+                                    <div className="caption">
+                                        <h4>{book.volumeInfo.title}</h4>
+                                    </div>
+                                    <div className="description">
+                                        <p>{book.volumeInfo.description}</p>
+                                    </div>
+                                    <div className="link">
+                                    <Link  
+                                        to={{
+                                        pathname: '/info', 
+                                        about: {
+                                            title: book.volumeInfo.title,
+                                            imgURL: book.volumeInfo.imageLinks.thumbnail,
+                                            description: book.volumeInfo.description
+                                        }
+                                        }}
+
+                                        className="btn btn-primary btn-block"
+                                        >
+                                        More Info
+                                    </Link>
                                 </div>
-                                
-                            </div>
+                                </div>
                             </div>
                         ))}
+                    </div>
                     
-                    </div> 
                 </div>
             </React.Fragment>
         );
