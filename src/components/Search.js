@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import '../stylesheets/Search.css'
 import '../stylesheets/custom.scss';
+import { Link } from 'react-router-dom';
 
 const API_key = {
     key: `${process.env.REACT_APP_API_KEY}`,
@@ -29,8 +30,6 @@ export default class Search extends React.Component{
             axios.get(`${API_key.base}${this.state.bookName}&key=${API_key.key}&maxResults=12`)
                 .then(res =>{
                     this.setState({results:res.data.items});
-                    console.log(this.state.results)
-
                 })
                 .catch(err=>{
                     console.log("Error!")
@@ -58,6 +57,39 @@ export default class Search extends React.Component{
                             </form>
                         </div>
                     </header>
+                    
+                    <div className="row text-center content">
+                        {this.state.results.map(book => (
+                            <div className="col-md-3 col-sm-6"> 
+                            <div className="img-thumbnail">
+                                <div className="image">
+                                    <img src={book.volumeInfo.imageLinks.thumbnail} alt = {book.volumeInfo.title}/>
+                                </div>
+                                <div className="caption">
+                                    <h4>{book.volumeInfo.title}</h4>
+                                </div>
+                                <div className="link">
+                                <Link  
+                                    to={{
+                                    pathname: '/info', 
+                                    about: {
+                                        title: book.volumeInfo.title,
+                                        imgURL: book.volumeInfo.imageLinks.thumbnail,
+                                        description: book.volumeInfo.description
+                                    }
+                                    }}
+
+                                    className="btn btn-primary btn-block"
+                                    >
+                                    Synopsis
+                                </Link>
+                                </div>
+                                
+                            </div>
+                            </div>
+                        ))}
+                    
+                    </div> 
                 </div>
             </React.Fragment>
         );
