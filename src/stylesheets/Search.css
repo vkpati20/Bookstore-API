@@ -1,0 +1,44 @@
+html, body, #root{
+    height: 100%;
+    background: url('cool-background.png');
+  }
+  .jumbotron{
+    padding: 0;
+  }
+  
+  form input{
+    margin-right: 25px;
+  }
+  .content{
+    display: flex; 
+    flex-wrap: wrap;
+  }
+  
+  .row div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .row .caption h4{
+    font-size: 1.5vw
+  }
+  
+  img{
+    max-height: 150px;
+  }
+  
+  @media(min-width: 1400px){
+    .row .caption h4{
+      font-size: 21px;
+  
+    }
+  }@media(max-width: 767px){
+    .row .caption h4{
+      font-size: 2vw;
+    }  
+  }
+  @media(max-width: 575px){
+    .row .caption h4{
+      font-size: 3vw
+    }  
+  }

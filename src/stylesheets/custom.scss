@@ -1,2 +1,10 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
+.jumbotron{
+    padding: 1rem 2rem !important;
+    border-radius: 0 0 .3rem .3rem;
+}
+
+.img-thumbnail {
+    height: 100%;
+  }
