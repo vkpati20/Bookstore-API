@@ -1,6 +1,7 @@
 html, body, #root{
     height: 100%;
     background: url('cool-background.png');
+    background-size: cover;
   }
   .jumbotron{
     padding: 0;
@@ -31,10 +32,16 @@ html, body, #root{
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
   }
+
+  .book{
+    border: solid 1px #686a6d;
+  }
   
   img{
     max-height: 150px;
   }
+
+
   
   @media(min-width: 1400px){
     .row .caption h4{

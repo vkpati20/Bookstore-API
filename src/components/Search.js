@@ -60,7 +60,7 @@ export default class Search extends React.Component{
 
                     <div className="row">
                         {this.state.results.map(book=>(
-                            <div className="col-lg-4 col-md-6 col-sm-12">
+                            <div className="col-lg-4 col-md-6 col-sm-12 book">
                                 <div className="container">
                                     <div className="image">
                                         <img src={book.volumeInfo.imageLinks.thumbnail} alt = {book.volumeInfo.title}/>
