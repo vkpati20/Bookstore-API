@@ -33,8 +33,10 @@ export default class Search extends React.Component{
                     console.log(`${API_key.base}${this.state.bookName}&key=${API_key.key}&maxResults=12`);
                 })
                 .catch(err=>{
+                    console.log(`${API_key.base}${this.state.bookName}&key=${API_key.key}&maxResults=12`);
+
                     console.log("Error!")
-                    console.logg(err);
+                    console.log(err);
                 })
         }
     }
@@ -82,7 +84,7 @@ export default class Search extends React.Component{
                                             imgURL: book.volumeInfo.imageLinks.thumbnail,
                                             description: book.volumeInfo.description,
                                             publisher: book.volumeInfo.publisher,
-                                            isbn: book.volumeInfo.industryIdentifiers[1].identifier,
+                                            isbn: book.volumeInfo.industryIdentifiers===undefined? '': book.volumeInfo.industryIdentifiers[1].identifier,
                                             bookLink: book.volumeInfo.previewLink
                                         }
                                         }}
