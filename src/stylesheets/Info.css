@@ -3,23 +3,23 @@
     margin-bottom: 15px;
 }
 
-.img-details{
+.info .img-details{
     clear: both;
     height: fit-content;
     margin-bottom: 65px;
 }
 
-.details .author:last-child {
+.info .details .author:last-child {
     color: red;
 }
 
-.image{
+.info .image{
     float: left;
     margin-right: 20px;
 }
 
 @media(max-width: 400px){
-    .image{
+    .info .image{
         float: none;
   
     }

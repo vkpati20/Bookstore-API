@@ -3,58 +3,58 @@ html, body, #root{
     background: url('cool-background.png');
     background-size: cover;
   }
-  .jumbotron{
-    padding: 0;
-  }
+.jumbotron{
+  padding: 0;
+}
   
-  form input{
-    margin-right: 25px;
-  }
-  .content{
-    display: flex; 
-    flex-wrap: wrap;
-  }
+form input{
+  margin-right: 25px;
+}
+.content{
+  display: flex; 
+  flex-wrap: wrap;
+}
+
+.row div{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.row .caption h4{
+  font-size: 1.5vw
+}
+
+.row .description{
+  height: 145px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.book{
+  border: solid 1px #686a6d;
+}
   
-  .row div{
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
+img{
+  max-height: 150px;
+}
+
+
   
+@media(min-width: 1400px){
   .row .caption h4{
-    font-size: 1.5vw
-  }
+    font-size: 21px;
 
-  .row .description{
-    height: 145px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
   }
-
-  .book{
-    border: solid 1px #686a6d;
-  }
-  
-  img{
-    max-height: 150px;
-  }
-
-
-  
-  @media(min-width: 1400px){
-    .row .caption h4{
-      font-size: 21px;
-  
-    }
-  }@media(max-width: 767px){
-    .row .caption h4{
-      font-size: 2vw;
-    }  
-  }
-  @media(max-width: 575px){
-    .row .caption h4{
-      font-size: 3vw
-    }  
-  }
+}@media(max-width: 767px){
+  .row .caption h4{
+    font-size: 2vw;
+  }  
+}
+@media(max-width: 575px){
+  .row .caption h4{
+    font-size: 3vw
+  }  
+}

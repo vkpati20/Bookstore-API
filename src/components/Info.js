@@ -9,6 +9,8 @@ export default class Info extends React.Component {
 
     func = () =>{
         var authors = this.props.location.about.authors;
+        if(authors==undefined)
+            return "";
         var text ="";
         for(var i = 0; i < authors.length-1; i++)
         {
