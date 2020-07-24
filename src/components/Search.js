@@ -30,6 +30,7 @@ export default class Search extends React.Component{
             axios.get(`${API_key.base}${this.state.bookName}&key=${API_key.key}&maxResults=12`)
                 .then(res =>{
                     this.setState({results:res.data.items});
+                    console.log(`${API_key.base}${this.state.bookName}&key=${API_key.key}&maxResults=12`);
                 })
                 .catch(err=>{
                     console.log("Error!")
@@ -77,8 +78,11 @@ export default class Search extends React.Component{
                                         pathname: '/info', 
                                         about: {
                                             title: book.volumeInfo.title,
+                                            authors: book.volumeInfo.authors,
                                             imgURL: book.volumeInfo.imageLinks.thumbnail,
-                                            description: book.volumeInfo.description
+                                            description: book.volumeInfo.description,
+                                            publisher: book.volumeInfo.publisher,
+                                            isbn: book.volumeInfo.industryIdentifiers[1].identifier
                                         }
                                         }}
 
