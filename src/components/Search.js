@@ -82,7 +82,8 @@ export default class Search extends React.Component{
                                             imgURL: book.volumeInfo.imageLinks.thumbnail,
                                             description: book.volumeInfo.description,
                                             publisher: book.volumeInfo.publisher,
-                                            isbn: book.volumeInfo.industryIdentifiers[1].identifier
+                                            isbn: book.volumeInfo.industryIdentifiers[1].identifier,
+                                            bookLink: book.volumeInfo.previewLink
                                         }
                                         }}
 

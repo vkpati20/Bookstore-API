@@ -8,6 +8,10 @@
     height: fit-content;
     margin-bottom: 65px;
 }
+.info .img-details .details p{
+    margin-top: 0;
+    margin-bottom: 15px;
+}
 
 .info .details .author:last-child {
     color: red;

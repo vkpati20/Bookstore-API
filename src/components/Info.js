@@ -33,7 +33,7 @@ export default class Info extends React.Component {
                     <p>Author(s): {this.func()}</p>
                     <p>Publisher: {this.props.location.about.publisher}</p>
                     <p>ISBN: {this.props.location.about.isbn}</p>
-
+                    <a class="btn btn-danger btn-sm" href={this.props.location.about.bookLink} target="_blank">Book Link</a>
                 </div>
             </div>
             <div className="desc">
