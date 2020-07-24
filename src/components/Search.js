@@ -11,12 +11,18 @@ const API_key = {
 export default class Search extends React.Component{
     state={
         bookName: '',
+        numBooks: 12,
         results: []
     }
 
-    handleChange = e =>{
+    handleTitleChange = e =>{
         this.setState({
             bookName: e.target.value
+        })
+    }
+    handleBooksChange = e =>{
+        this.setState({
+            numBooks: e.target.value
         })
     }
 
@@ -25,15 +31,18 @@ export default class Search extends React.Component{
         if(this.state.bookName.length === 0){
             alert("enter a book name");
         }
+        else if(this.state.numBooks < 1 || this.state.numBooks > 40 ){
+            alert("Number of books should be between 1 and 40");
+        }
 
         else{
-            axios.get(`${API_key.base}${this.state.bookName}&key=${API_key.key}&maxResults=12`)
+            axios.get(`${API_key.base}${this.state.bookName}&key=${API_key.key}&maxResults=${this.state.numBooks}`)
                 .then(res =>{
                     this.setState({results:res.data.items});
-                    console.log(`${API_key.base}${this.state.bookName}&key=${API_key.key}&maxResults=12`);
+                    console.log(`${API_key.base}${this.state.bookName}&key=${API_key.key}&maxResults=${this.state.numBooks}`);
                 })
                 .catch(err=>{
-                    console.log(`${API_key.base}${this.state.bookName}&key=${API_key.key}&maxResults=12`);
+                    console.log(`${API_key.base}${this.state.bookName}&key=${API_key.key}&maxResults=${this.state.numBooks}`);
 
                     console.log("Error!")
                     console.log(err);
@@ -51,11 +60,15 @@ export default class Search extends React.Component{
                             <h1>Welcome to Google Books API</h1>
                             <p>Enter a book name to start</p>
                             <form onSubmit={this.handleSubmit}> 
-                                <div className="form-group">
-                                    <input className="form-control" type="text" name="bookName" value = {this.state.bookName} onChange={this.handleChange}/>
+                                <div className="form-group one">
+                                    <input className="form-control" type="text" name="bookName" value = {this.state.bookName} onChange={this.handleTitleChange}/>
                                 </div>
-                                <div className="form-group">
+                                <div className="form-group two">
                                     <button type="submit" className="btn btn-primary btn-md">Submit</button>
+                                    <div className="numBooks">
+                                        <label>Number of books to display: </label>
+                                        <input className="form-control" type="text" name="numBooks" value={this.state.numBooks} onChange={this.handleBooksChange} maxlength="2"/>
+                                    </div>
                                 </div>
                             </form>
                         </div>

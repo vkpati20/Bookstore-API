@@ -10,6 +10,16 @@ html, body, #root{
 form input{
   margin-right: 25px;
 }
+.numBooks{
+  float: right;
+}
+
+.form-group.two input{
+  margin-left: 10px;
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+}
 .content{
   display: flex; 
   flex-wrap: wrap;
