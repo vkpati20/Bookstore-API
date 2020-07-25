@@ -25,6 +25,10 @@ form input{
   flex-wrap: wrap;
 }
 
+.row{
+  margin-bottom: 20px;
+}
+
 .row div{
   margin-top: 10px;
   margin-bottom: 10px;

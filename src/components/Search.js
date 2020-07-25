@@ -11,7 +11,7 @@ const API_key = {
 export default class Search extends React.Component{
     state={
         bookName: '',
-        numBooks: 12,
+        numBooks: 0,
         results: []
     }
 
