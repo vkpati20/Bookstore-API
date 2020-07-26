@@ -9,7 +9,7 @@ export default class Info extends React.Component {
 
     func = () =>{
         var authors = this.props.location.about.authors;
-        if(authors==undefined)
+        if(authors===undefined)
             return "";
         var text ="";
         for(var i = 0; i < authors.length-1; i++)
@@ -27,7 +27,7 @@ export default class Info extends React.Component {
             </div>
             <div className="img-details">
                 <div class="image">
-                    <img src={this.props.location.about.imgURL}/>
+                    <img src={this.props.location.about.imgURL} alt={this.props.location.about.title}/>
                 </div>
                 <div className="details">
                     <p>Author(s): {this.func()}</p>
